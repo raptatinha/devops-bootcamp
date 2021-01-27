@@ -15,6 +15,11 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+
+- task: CmdLine@2
+  inputs:
+    script: 'mkdir d:a\1\MobEAD'
+
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
@@ -32,3 +37,4 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+    
